@@ -24,13 +24,11 @@ class UsersDAO
     }
     public function create(Users $data)
     {
-        $sql = "INSERT INTO `$this->tabla` (`id`, `name`, `email`, `password`, `rol`, `status`) VALUES (NULL, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO `$this->tabla` (`id`, `name`, `email`, `password`) VALUES (NULL, ?, ?, ?)";
         $array = array(
             $data->getName(),
             $data->getEmail(),
-            $data->getPassword(),
-            $data->getRol(),
-            $data->getStatus()
+            $data->getPassword()
         );
         $result = $this->conexion->ejecutarActualizacion($sql, $array);
         return $result;
@@ -64,9 +62,9 @@ class UsersDAO
         $sql = "SELECT * FROM $this->tabla WHERE email=?";
         $result = $this->conexion->ejecutarConsultaClase($sql, array($email), $this->clase);
         if (sizeof($result) > 0) {
-            return $result[0];
+            return false;
         } else {
-            return null;
+            return true;
         }
     }
 }

@@ -29,3 +29,7 @@ RewriteRule ^Commands/command-logs?$ Controlador/CommandsController.php?a=execut
 RewriteRule ^Servicios/create?$ Controlador/ServiciosController.php?a=create [L,QSA]
 RewriteRule ^Servicios/createCommands?$ Controlador/ServiciosController.php?a=createcommands [L,QSA]
 
+#SERVICIOS
+RewriteRule ^Usuarios/?$ Controlador/UsuariosController.php?a=consultar [L,QSA]
+RewriteRule ^Usuarios/create?$ Controlador/UsuariosController.php?a=create [L,QSA]
+RewriteRule ^Usuarios/?([0-9]+)?/?$ Controlador/UsuariosController.php?a=manage&id=$1 [L,QSA]

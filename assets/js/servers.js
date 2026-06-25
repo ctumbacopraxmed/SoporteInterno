@@ -179,7 +179,7 @@ function refreshServers() {
             }
         },
         onComplete: function () {
-            setTimeout(refreshServers, 120000);
+            setTimeout(refreshServers, 100000);
         }
     });
 }
@@ -213,7 +213,7 @@ function buildStats(data) {
         <div class="flex items-center justify-between">
             <div>
                 <p class="text-gray-600  text-sm font-medium font-body">Servidores</p>
-                <p class="text-3xl font-bold text-gray-800  mt-1 font-display servers_quantity">${data.servers_quantity}</p>
+                <p class="text-3xl font-bold text-gray-800  mt-1 font-display servers_quantity">${data.servers_quantity || 0}</p>
                 <p class="text-blue-600  text-sm mt-2 font-body">Total de Servidores</p>
             </div>
             <div class="w-12 h-12 bg-blue-100  rounded-xl flex items-center justify-center">
@@ -225,7 +225,7 @@ function buildStats(data) {
         <div class="flex items-center justify-between">
             <div>
                 <p class="text-gray-600  text-sm font-medium font-body">En Linea</p>
-                <p class="text-3xl font-bold text-gray-800  mt-1 font-display server_online">${data.server_online}</p>
+                <p class="text-3xl font-bold text-gray-800  mt-1 font-display server_online">${data.server_online || 0}</p>
                 <p class="text-green-600  text-sm mt-2 font-body">Sin novedades</p>
             </div>
             <div class="w-12 h-12 bg-green-100  rounded-xl flex items-center justify-center">
@@ -238,7 +238,7 @@ function buildStats(data) {
         <div class="flex items-center justify-between">
             <div>
                 <p class="text-gray-600  text-sm font-medium font-body">Advertencia</p>
-                <p class="text-3xl font-bold text-gray-800  mt-1 font-display server_latency">${data.server_latency}</p>
+                <p class="text-3xl font-bold text-gray-800  mt-1 font-display server_latency">${data.server_latency || 0}</p>
                 <p class="text-orange-600  text-sm mt-2 font-body">Lentitud detectada</p>
             </div>
             <div class="w-12 h-12 bg-orange-100  rounded-xl flex items-center justify-center">
@@ -250,7 +250,7 @@ function buildStats(data) {
         <div class="flex items-center justify-between">
             <div>
                 <p class="text-gray-600  text-sm font-medium font-body">Fuera de Linea</p>
-                <p class="text-3xl font-bold text-gray-800  mt-1 font-display server_offline">${data.server_offline}</p>
+                <p class="text-3xl font-bold text-gray-800  mt-1 font-display server_offline">${data.server_offline || 0}</p>
                 <p class="text-red-600  text-sm mt-2 font-body">Revisar Servidores</p>
             </div>
             <div class="w-12 h-12 bg-red-100  rounded-xl flex items-center justify-center">

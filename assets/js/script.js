@@ -114,7 +114,9 @@ document.querySelectorAll(".dropdown-toggle").forEach((button) => {
     const submenu = button.nextElementSibling;
     submenu.classList.toggle("hidden");
     const icon = button.querySelector("i[data-lucide='chevron-down']");
-    icon.classList.toggle("rotate-180");
+    if (icon) {
+      icon.classList.toggle("rotate-180");
+    }
   });
 });
 

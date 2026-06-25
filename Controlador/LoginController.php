@@ -14,7 +14,7 @@ class LoginController
     public function login()
     {
         if (isset($_SESSION['ctuser'], $_SESSION['ctname'], $_SESSION['ctrol'])) {
-            redirect('Dashboard');
+            redirect('Servidores');
         } else {
             $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
             require_once RUTA . '/Vistas/Login.php';
@@ -49,8 +49,7 @@ class LoginController
         $_SESSION['ctname'] = $cuenta->getName();
         $_SESSION['ctrol'] = $cuenta->getRol();
         $_SESSION['ctini'] = $this->nameFormat();
-        //redirect($_SESSION['ctrol'] == 3 ? 'Otro' : 'Dashboard');
-        redirect('Dashboard');
+        redirect('Servidores');
     }
     private function nameFormat()
     {

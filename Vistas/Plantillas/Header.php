@@ -63,9 +63,9 @@
                                 </div>
                                 <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200"></i>
                             </button>
-                            <ul class="mt-1 space-y-1 hidden">
+                            <ul class="mt-1 space-y-1 hidden" id="settings">
                                 <li>
-                                    <a href="#" class="px-4 py-2 rounded-lg text-gray-600  hover:bg-gray-50  hover:text-gray-900  transition-all duration-200 flex items-center space-x-3">
+                                    <a href="<?php echo RUTA_WEB; ?>/Usuarios"" class="<?= $this->clase == 'Usuarios' ? ACTIVE : INACTIVE ?>">
                                         <i data-lucide="UserLock" class="w-5 h-5 text-gray-600 "></i>
                                         <span>Usuarios</span>
                                     </a>
@@ -89,7 +89,7 @@
                         </div>
                         <div class="flex-1">
                             <p class="text-sm font-display font-semibold text-gray-900 "><?= $_SESSION['ctname'] ?></p>
-                            <p class="text-xs font-body text-gray-500 ">Analista de Sistemas</p>
+                            <p class="text-xs font-body text-gray-500 ">Administrador</p>
                         </div>
                         <a href="<?php echo RUTA_WEB; ?>/Logout"><i data-lucide="log-out" class="w-4 h-4 text-gray-400"></i></a>
                     </div>
@@ -133,8 +133,8 @@
                                                 <i data-lucide="calendar" class="w-5 h-5 text-white"></i>
                                             </div>
                                             <div class="flex-1 min-w-0">
-                                                <p class="text-sm font-medium text-gray-900  truncate">New appointment scheduled</p>
-                                                <p class="text-xs text-gray-500  mt-1">John Smith booked an appointment for tomorrow at 10:00 AM</p>
+                                                <p class="text-sm font-medium text-gray-900  truncate">Lorem ipsum</p>
+                                                <p class="text-xs text-gray-500  mt-1">Lorem ipsum dolor sit amet consectetur adipiscing elit diam, sem viverra suspendisse litora ridiculus commodo tellus nullam, varius arcu faucibus praesent fusce mauris cubilia.</p>
                                                 <p class="text-xs text-gray-400  mt-1">2 minutes ago</p>
                                             </div>
                                         </div>
