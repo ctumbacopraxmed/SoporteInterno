@@ -1,0 +1,31 @@
+Options +FollowSymLinks
+RewriteEngine On
+ErrorDocument 404 /errors/404.html
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#LOGIN
+RewriteRule ^Login/?$ Controlador/LoginController.php?a=login [L,QSA]
+RewriteRule ^Logear/?$ Controlador/LoginController.php?a=access [L,QSA]
+RewriteRule ^Logout/?$ Controlador/LoginController.php?a=logout [L,QSA]
+
+#DASHBOARD
+RewriteRule ^Dashboard/?$ Controlador/DashboardController.php?a=consultar [L,QSA]
+
+#SERVIDORES
+RewriteRule ^Servidores/?$ Controlador/ServidoresController.php?a=consultar [L,QSA]
+RewriteRule ^Servidores/?([0-9]+)?/?$ Controlador/ServidoresController.php?a=manage&id=$1 [L,QSA]
+RewriteRule ^Servidores/stats?$ Controlador/ServidoresController.php?a=stats [L,QSA]
+RewriteRule ^Servidores/list?$ Controlador/ServidoresController.php?a=list [L,QSA]
+RewriteRule ^Servidores/status?$ Controlador/ServidoresController.php?a=status [L,QSA]
+RewriteRule ^Servidores/create?$ Controlador/ServidoresController.php?a=create [L,QSA]
+
+#COMANDOS
+RewriteRule ^Commands/execute-command?$ Controlador/CommandsController.php?a=execute [L,QSA]
+RewriteRule ^Commands/command-logs?$ Controlador/CommandsController.php?a=execute_logs [L,QSA]
+
+#SERVICIOS
+RewriteRule ^Servicios/create?$ Controlador/ServiciosController.php?a=create [L,QSA]
+RewriteRule ^Servicios/createCommands?$ Controlador/ServiciosController.php?a=createcommands [L,QSA]
+
